@@ -1,0 +1,20 @@
+<div class=container>
+  <h1>Post to a LFG</h1>
+  <div class="row">
+    <%= link_to "New LFG Post", new_post_path, class: 'btn btn-success' %>
+  </div>
+
+<%= render "form" %>
+  <div class="panel-heading clearfix">
+    <h2>Filter your LFG search</h2>
+
+    ## #Search begin
+
+
+    <div class="row">
+      <% @posts.each do |post| %>
+        <p><%= link_to post.name, post %></p>
+      <% end %>
+    </div>
+</div>
+#All posts shown below or according to filter
