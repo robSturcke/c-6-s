@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+      <div class="logo">
+        <%= image_tag "logo.svg"%>
+      </div>
 
-<%= yield %>
+       <ul class="nav nav-tabs">
+    			<li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", about_path %></li>
+       </ul>
 
+       <div class="pull-right user-info">
+            <% if current_user %>
+            Hello <%= current_user.name %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Sign In", new_user_session_path %>
+            <% end %>
+        </div>
+
+         <p class="notice"><%= notice %></p>
+         <p class="alert"><%= alert %></p>
+         <%= yield %>
+  </div>
+  <footer>RSVision Design and Development 2016</footer>
 </body>
 </html>
