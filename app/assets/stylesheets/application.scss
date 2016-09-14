@@ -15,3 +15,158 @@
  */
   @import "bootstrap-sprockets";
   @import "bootstrap";
+  html, body {
+    letter-spacing: .17rem;
+  }
+
+  .container > .logo {
+    margin: 1.5rem;
+  }
+
+  .container-body {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: rgba(240,240,240, .3);
+    padding: 3.5rem;
+    border-radius: 4px;
+    max-width: 850px;
+    border: 1px solid rgba(255, 6, 6, .1);
+  }
+
+  .row {
+    padding: 2rem;
+  }
+
+  @media(max-width: 800px) {
+    .container-body {
+      width: 98%;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  a {
+    color: rgb(255, 6, 6);
+  }
+
+  a:hover {
+    color: rgb(255, 10, 10);
+  }
+
+  .nav-tabs > li > a:hover {
+    background-color: rgb(255, 6, 6);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 6, 6);
+  }
+
+  .image-tagged {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    margin-bottom: 2.5rem;
+    height: auto;
+    width: 60%;
+  }
+
+  @media(max-width: 800px) {
+    .image-tagged {
+      width: 65%;
+    }
+  }
+
+  @media(max-width: 600px) {
+    .image-tagged {
+      width: 95%;
+    }
+  }
+  p.body {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  input.btn.btn-success,
+  a.btn.btn-success,
+  a.btn.btn-danger {
+    background: transparent;
+    color: rgb(255, 10, 10);
+    border: none;
+    font-size: 1.2rem;
+  }
+
+  input.btn.btn-success:hover,
+  a.btn.btn-success:hover,
+  a.btn.btn-danger:hover {
+    background-color: rgb(255, 6, 6);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 6, 6);
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], input[type="title"], textarea {
+  	width: 80%;
+  	border: 1px solid rgba(30, 30, 30, .3);
+  	border-radius: 4px;
+  	margin-top: 10px;
+  	padding: .5em 1em;
+  	line-height: 1.75;
+  }
+
+  .links_container {
+    background-color: transparent;
+  }
+
+  textarea#post_body.form-control, {
+    border: 1px solid rgba(30, 30, 30, .3);
+    border-radius: 4px;
+  	margin-top: 10px;
+  	padding: .5em 1em;
+  	line-height: 1.75;
+  }
+
+  input[type="text"] {
+  	height: 35px;
+  }
+
+  textarea {
+   resize: none;
+  }
+
+  .login-field {
+    width: 65%;
+  }
+
+  @media(max-width: 800px) {
+    .login-field {
+      width: 95%;
+    }
+  }
+
+  .login-btn {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 6, 6);
+    font-size: 1.9rem;
+    margin: 1rem;
+    border: 1px solid rgb(255, 6, 6);
+    border-radius: 4px;
+    padding: .5rem;
+  }
+
+  footer {
+    width: 100%;
+    bottom: 0;
+    padding: 4rem;
+    margin-top: 40%;
+    text-align: center;
+    background-color: rgba(237,237,237, .4);
+  }
