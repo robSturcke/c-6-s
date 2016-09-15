@@ -1,4 +1,4 @@
-<div class="container-body">
+<div class="form-container">
   <div class="row">
       <h2>New LFG Post</h2>
       <%= form_for @post do |f| %>
@@ -7,7 +7,7 @@
           <%= f.label :name, 'Gamertag' %><br />
           <%= f.text_field :name, autofocus: true, placeholder: "Your Gamertag" %>
           </div>
-          
+
           <div class="col-md-6 col-marg-fix">
             <%= f.label :console, 'Select Console' %><br />
             <%= f.select :console, options_for_select([['Playstation 4', 'ps4'],
