@@ -16,12 +16,17 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
   html, body {
-    background-color: rgb(40, 40, 40);
+    font-family: 'PT Sans', sans-serif;
     letter-spacing: .17rem;
+    background-color: rgb(40, 40, 40);
   }
 
   .container > .logo {
     margin: 1.5rem;
+  }
+
+  div.pull-right.user-info {
+    color: rgb(255, 255, 255);
   }
 
   .container-body {
@@ -31,9 +36,25 @@
     width: 80%;
     background-color: rgb(250,250,250);
     padding: 3.5rem;
-    border-radius: 4px;
+    border-radius: 2px;
     max-width: 850px;
-    border: 1px solid rgba(255, 6, 6, .1);
+    border: 1px solid rgba(87, 120, 219, .3);
+  }
+
+  .col-md-6 {
+    display: block;
+  }
+
+  .posts-wrap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    background-color: rgb(250,250,250);
+    padding: 3.5rem;
+    border-radius: 2px;
+    max-width: 850px;
+    border: 1px solid rgba(87, 120, 219, .3);
   }
 
   .row {
@@ -56,41 +77,17 @@
   }
 
   a {
-    color: rgb(255, 6, 6);
+    color: rgb(87, 120, 219);
   }
 
   a:hover {
-    color: rgb(255, 10, 10);
+    color: rgb(87, 120, 219);
   }
 
-  .nav-tabs > li > a:hover {
-    background-color: rgb(255, 6, 6);
-    border-radius: 4px;
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(255, 6, 6);
+  .nav-tabs {
+    background-color: transparent;
   }
 
-  .image-tagged {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    align-content: center;
-    margin-bottom: 2.5rem;
-    height: auto;
-    width: 60%;
-  }
-
-  @media(max-width: 800px) {
-    .image-tagged {
-      width: 65%;
-    }
-  }
-
-  @media(max-width: 600px) {
-    .image-tagged {
-      width: 95%;
-    }
-  }
   p.body {
     margin-top: 1rem;
     margin-bottom: 4rem;
@@ -100,13 +97,20 @@
     font-size: 2rem;
   }
 
+  @media(max-width: 992px) {
+    .col-marg-fix {
+      margin-top: 3.5rem;
+    }
+  }
+
   input#post_name,
   input#post_light_lvl,
   textarea#post_notes.form-control {
-    border: 1px solid rgb(255, 6, 6);
+    border: 1px solid rgba(87, 120, 219, .7);
     border-radius: 4px;
     font-size: 1.8rem;
     padding: .5rem;
+    width: 100%;
   }
 
   textarea {
@@ -123,12 +127,13 @@
     }
   }
 
+  input.btn.btn-success,
   .login-btn {
     color: rgb(255, 255, 255);
-    background-color: rgb(255, 6, 6);
+    background-color: rgb(87, 120, 219);
     font-size: 1.9rem;
     margin: 1rem;
-    border: 1px solid rgb(255, 6, 6);
+    border: 1px solid rgb(87, 120, 219);
     border-radius: 4px;
     padding: .5rem;
   }

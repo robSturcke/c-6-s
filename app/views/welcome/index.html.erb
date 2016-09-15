@@ -1,0 +1,47 @@
+<div class="container">
+  <% unless current_user %>
+    <div class="jumbotron no-margin">
+      <div class="row no-margin no-padding">
+        <h1>The Cayde 6 Sect</h1>
+        <p>A Private Destiny LFG Community to bring us together</p>
+      </div>
+      <div class="row no-margin">
+        <div class="col-md-6 no-padding">
+          <h2>Not a member?</h2>
+          <h4><%= link_to "Create a new account", new_user_registration_path %></h4>
+        </div>
+        <div class="col-md-6 no-padding">
+          <h2>Already have an account?</h2>
+          <h4><%= link_to "Sign in", new_user_session_path %></h4>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="jumbotron no-margin">
+      <div class="row no-margin no-padding">
+        <h1>GamingLFG</h1>
+        <p>A LFG hub for gaming</p>
+      </div>
+    </div>
+      <div class="row no-margin">
+        <div class="col-md-4 pull-left">
+          <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+              </div>
+              <div class="panel-body">
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+        <br />
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+          </div>
+          <div class="panel-body">
+          </div>
+        </div>
+        </div>
+      </div>
+  <% end %>
+</div>

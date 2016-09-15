@@ -4,26 +4,31 @@
   <title>Cayde6Sect</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=PT+Sans' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
-      <div class="logo">
-        <%= image_tag "logo.svg"%>
-      </div>
+    <div class="logo">
+      <h1>Cayde-6 Sect</h1>
+    </div>
 
-       <ul class="nav nav-tabs">
-    			<li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "About", about_path %></li>
-       </ul>
+    <br />
+    <ul class="nav nav-tabs">
+  			<li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New Post", new_post_path %></li>
+        <li><%= link_to "About", about_path %></li>
+     </ul>
 
-       <div class="pull-right user-info">
-            <% if current_user %>
-            Hello 
-            <% else %>
-              <%= link_to "Sign In", new_user_session_path %>
-            <% end %>
-        </div>
+     <br />
+
+     <div class="pull-right user-info">
+          <% if current_user %>
+          <%= current_user.email %> <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path %>
+          <% end %>
+     </div>
 
          <p class="notice"><%= notice %></p>
          <p class="alert"><%= alert %></p>
