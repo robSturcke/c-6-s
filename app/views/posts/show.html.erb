@@ -2,20 +2,12 @@
   <div class="row">
     <br>
     <div class="col-md-8">
-      <h1><%= @post.name %></h1>
+
     <div class="col-md-4">
-      <%= link_to "Edit Post", edit_post_path(@post), class: 'btn btn-success' %>
       <%= link_to "Delete Post", @post, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this application? This cannot be undone.' } %>
       <br>
     </div>
     <br>
   </div>
-  <%= render "items/form" %>
-  <div class="row">
-    <br>
-    <table class="table">
-      <%= render @post.items %>
-      <br>
-    </table>
-  </div>
+  
 </div>

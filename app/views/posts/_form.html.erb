@@ -1,150 +1,104 @@
-<%= form_for @post do |f| %>
+<div class="container-body">
+  <div class="row">
+      <%= form_for @post do |f| %>
 
-<div class="panel-heading clearfix">
-  <h2>Fill out your LFG!</h2>
+      <div class="panel-heading clearfix">
+        <h2>Find your teammates and bring it home!</h2>
 
-  <br>
+        <br />
 
-    <div class="clearfix">
-      <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, placeholder: "#{current_user.name}" %>
-      </div>
-
-      <br>
-
-      <div class="filter-third">
-        <div class="styled-select styled-blue">
-          <select id="post_console" name="post[console]">
-            <option value="%">Select Console</option>
-            <option value="PS4">Playstation 4</option>
-            <option value="XB1">Xbox One</option>
-          </select>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="filter-third filter-middle" id="destinyFields" style="display: none;">
-        <div class="styled-select styled-blue">
-          <select id="post_searchActivityDestiny" name="post[searchActivityDestiny]">
-            <option value="%">Select Activity</option>
-            <optgroup label="Private Crucible Matches">
-              <option value="pm-1v1">1v1 Private Match</option>
-              <option value="pm-3v3">3v3 Private Match</option>
-              <option value="pm-6v6">6v6 Private Match</option>
-            </optgroup>
-            <optgroup label="Crucible">
-              <option value="rumble">Rumble</option>
-              <option value="3v3">3v3</option>
-              <option value="6v6">6v6</option>
-              <option value="rift">Rift</option>
-              <option value="too-flawless">Trials of Osiris Flawless </option>
-              <option value="too-fun">Trials of Osiris Casual/Fun </option>
-              <option value="too-sherpa">Trials of Osiris Sherpa </option>
-              <option value="iron-banner">Iron Banner</option>
-            </optgroup>
-            <optgroup label="Strikes | Quest | Nightfall">
-              <option value="strike-playlist">Strike Playlist</option>
-              <option value="quest">Quest</option>
-              <option value="nightfall">Nightfall</option>
-            </optgroup>
-            <optgroup label="Raid Normal Mode">
-              <optgroup label="Vault of Glass - Normal">
-                <option value="vog-norm-fr">Vault of Glass Fresh Run - Normal</option>
-                <option value="vog-norm-cp">Vault of Glass Checkpoint - Normal</option>
-                <option value="vog-norm-boss">Vault of Glass Atheon - Normal</option>
-                <option value="vog-norm-sherpa">Vault of Glass Sherpa Help - Normal</option>
-              </optgroup>
-              <optgroup label="Crota's End - Normal">
-                <option value="crota-norm-fr">Crota's End Fresh Run - Normal</option>
-                <option value="crota-norm-cp">Crota's End Checkpoint - Normal</option>
-                <option value="crota-norm-boss">Crota's End Crota - Normal</option>
-                <option value="crota-norm-sherpa">Crota's End Sherpa Help - Normal</option>
-              </optgroup>
-              <optgroup label="King's Fall - Normal">
-                <option value="kf-norm-fr">King's Fall Fresh Run - Normal</option>
-                <option value="kf-norm-totems">King's Fall Totems - Normal</option>
-                <option value="kf-norm-warpriest">King's Fall Warpriest - Normal</option>
-                <option value="kf-norm-golgoroth">King's Fall Golgoroth - Normal</option>
-                <option value="kf-norm-daughters">King's Fall Daughters - Normal</option>
-                <option value="kf-norm-oryx">King's Fall Oryx - Normal</option>
-                <option value="kf-norm-sherpa">King's Fall Sherpa Help - Normal</option>
-              </optgroup>
-            </optgroup>
-            <optgroup label="Raid Hard Mode">
-              <optgroup label="Vault of Glass - Hard">
-                <option value="vog-hard-fr">Vault of Glass Fresh Run - Hard</option>
-                <option value="vog-hard-cp">Vault of Glass Checkpoint - Hard</option>
-                <option value="vog-hard-boss">Vault of Glass Atheon - Hard</option>
-                <option value="vog-hard-sherpa">Vault of Glass Sherpa Help - Hard</option>
-              </optgroup>
-              <optgroup label="Crota's End - Hard">
-                <option value="crota-hard-fr">Crota's End Fresh Run - Hard</option>
-                <option value="crota-hard-cp">Crota's End Checkpoint - Hard</option>
-                <option value="crota-hard-boss">Crota's End Crota - Hard</option>
-                <option value="crota-hard-sherpa">Crota's End Sherpa Help - Hard</option>
-              </optgroup>
-              <optgroup label="King's Fall - Hard">
-                <option value="kf-hard-fr">King's Fall Fresh Run - Hard</option>
-                <option value="kf-hard-totems">King's Fall Totems - Hard</option>
-                <option value="kf-hard-warpriest">King's Fall Warpriest - Hard</option>
-                <option value="kf-hard-golgoroth">King's Fall Golgoroth - Hard</option>
-                <option value="kf-hard-daughters">King's Fall Daughters - Hard</option>
-                <option value="kf-hard-oryx">King's Fall Oryx - Hard</option>
-                <option value="kf-hard-sherpa">King's Fall Sherpa Help - Hard</option>
-              </optgroup>
-            </optgroup>
-          </select>
-        </div>
-
-        <br>
-
-        <div class="filter-third filter-middle">
-          <div class="styled-select styled-blue">
-            <select id="post_searchDestinyClass" name="post[searchDestinyClass]">
-              <option value="%">Select Class</option>
-              <option value="destinyHunter">Hunter</option>
-              <option value="destinyWarlock">Warlock</option>
-              <option value="destinyTitan">Titan</option>
-            </select>
+        <div class="clearfix">
+          <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, placeholder: "Your name" %>
           </div>
         </div>
 
-        <br>
-        <div class="light-lvl-box">
-          <%= f.label :lightLvl %><br />
-          <%= f.text_area %>
+        <br />
+
+        <div class="filter-third">
+          <div class="styled-select styled-blue">
+            <%= f.label :console, 'Select Console' %>
+            <%= f.select :console, options_for_select([['Playstation 4', 'ps4'], ['Xbox One', 'xb1']]) %>
+          </div>
         </div>
 
-  </div> #clearfix end
+        <br />
 
-<br>
-
-    <div class="clearfix">
-      <div class="filter-third filter-check">
-        <div class="checkbox>">
-          <label>
-            <input type="checkbox" value="1" id="searchMic" name="searchMic">
-            <span class="cr" style="pointer-events: none;">
-              <i class="cr-icon glyphicon glyphicon-ok"></i>
-            </span>
-            <span class="checkbox-text" style="pointer-events: none;">Got a mic?</div>
-          </label>
+        <div class="filter-third">
+          <div class="styled-select styled-blue">
+            <%= f.label :activity, 'Select Activity' %>
+            <%= f.select :activity, options_for_select([
+            ['1v1 Private Crucible Match', 'pm1v1'],
+            ['2v2 Private Crucible Match', 'pm2v2'],
+            ['3v3 Private Crucible Match', 'pm3v3'],
+            ['6v6 Private Crucible Match', 'pm6v6'],
+            ['Rumble', 'rumble'],
+            ['Doubles', '2v2play'],
+            ['Skirmish | Elimination | Salvage', '3v3play'],
+            ['Clash | Control | Rift', '6v6play'],
+            ['Supremecy', 'supremecy'],
+            ['Trials of Osiris: Flawless', 'tooflawless'],
+            ['Trials of Osiris: Fun', 'toofun'],
+            ['Trials of Osiris: Sherpa', 'toosherpa'],
+            ['Iron Banner', 'ironbanner'],
+            ['Strikes Playlist', 'strikesplay'],
+            ['Patrol', 'patrol'],
+            ['Quest', 'quest'],
+            ['Nightfall', 'nightfall'],
+            ['Vault of Glass Raid: Normal', 'vognorm'],
+            ['Vault of Glass Raid: Hard', 'voghard'],
+            ['Crota\'s End Raid: Normal', 'cenorm'],
+            ['Crota\'s End Raid: Hard', 'cehard'],
+            ['King\'s Fall Raid: Normal', 'kfnorm'],
+            ['King\'s Fall Raid: Hard', 'kfhard'],
+            ]) %>
+          </div>
         </div>
+
+        <br />
+
+        <div class="filter-third">
+          <div class="styled-select styled-blue">
+            <%= f.label :destiny_class, 'Class' %>
+            <%= f.select :destiny_class, options_for_select([
+              ['Hunter', 'hunter'],
+              ['Warlock', 'warlock'],
+              ['Titan', 'titan']]) %>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="clearfix">
+          <div class="field">
+          <%= f.label :light_lvl, 'Your Light Level' %><br />
+          <%= f.text_field :light_lvl, placeholder: "eg. 335" %>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="clearfix">
+          <div class="field">
+          <%= check_box_tag(:mic) %>
+          <%= label_tag(:mic, "Mic?") %>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+          <%= f.label :notes %>
+          <%= f.text_area :notes, rows: 4, class: 'form-control',
+          placeholder: "Enter notes such as: Quest Name, Need Sherpa, Need 2 more people or any other Specific Criteria" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "Submit!", class: 'btn btn-success' %>
+        </div>
+
       </div>
-
-      <div class="form-group">
-        <%= f.label :notes %>
-        <%= f.text_area :notes, rows: 4, class: 'form-control', placeholder: "Enter notes such as: Quest Name or Specific Queries" %>
-      </div>
-
-    </div>
-## #end of panel-heading clearfix
-
-
-
-<div class="form-group">
-  <%= f.submit "Submit!", class: 'btn btn-success' %>
+    <% end %>
+  </div>
 </div>
-<% end %>

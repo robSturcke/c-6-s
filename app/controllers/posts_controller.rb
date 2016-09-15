@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = current_user.posts.last
+    @post = Post.new
   end
 
   def edit
@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.user = current_user
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "Posted!"
@@ -51,6 +50,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name)
+    params.require(:post).permit(:name, :console, :light_lvl, :activity, :destiny_class, :mic)
   end
 end

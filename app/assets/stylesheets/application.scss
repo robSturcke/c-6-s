@@ -16,6 +16,7 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
   html, body {
+    background-color: rgb(40, 40, 40);
     letter-spacing: .17rem;
   }
 
@@ -28,7 +29,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    background-color: rgba(240,240,240, .3);
+    background-color: rgb(250,250,250);
     padding: 3.5rem;
     border-radius: 4px;
     max-width: 850px;
@@ -95,47 +96,17 @@
     margin-bottom: 4rem;
   }
 
-  input.btn.btn-success,
-  a.btn.btn-success,
-  a.btn.btn-danger {
-    background: transparent;
-    color: rgb(255, 10, 10);
-    border: none;
-    font-size: 1.2rem;
+  label {
+    font-size: 2rem;
   }
 
-  input.btn.btn-success:hover,
-  a.btn.btn-success:hover,
-  a.btn.btn-danger:hover {
-    background-color: rgb(255, 6, 6);
-    border-radius: 4px;
-    color: rgb(255, 255, 255);
+  input#post_name,
+  input#post_light_lvl,
+  textarea#post_notes.form-control {
     border: 1px solid rgb(255, 6, 6);
-  }
-
-  input[type="text"], input[type="email"], input[type="password"], input[type="title"], textarea {
-  	width: 80%;
-  	border: 1px solid rgba(30, 30, 30, .3);
-  	border-radius: 4px;
-  	margin-top: 10px;
-  	padding: .5em 1em;
-  	line-height: 1.75;
-  }
-
-  .links_container {
-    background-color: transparent;
-  }
-
-  textarea#post_body.form-control, {
-    border: 1px solid rgba(30, 30, 30, .3);
     border-radius: 4px;
-  	margin-top: 10px;
-  	padding: .5em 1em;
-  	line-height: 1.75;
-  }
-
-  input[type="text"] {
-  	height: 35px;
+    font-size: 1.8rem;
+    padding: .5rem;
   }
 
   textarea {

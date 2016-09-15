@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914205503) do
+ActiveRecord::Schema.define(version: 20160914221515) do
 
   create_table "posts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "console"
+    t.string   "activity"
+    t.string   "destiny_class"
+    t.string   "light_lvl"
+    t.boolean  "mic"
+    t.text     "notes"
+    t.string   "name"
   end
 
   create_table "users", force: :cascade do |t|
