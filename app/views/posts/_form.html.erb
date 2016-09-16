@@ -44,6 +44,7 @@
             ['Crota\'s End Raid: Hard', 'cehard'],
             ['King\'s Fall Raid: Normal', 'kfnorm'],
             ['King\'s Fall Raid: Hard', 'kfhard'],
+            ['Wrath of the Machine: Normal', 'wotmnorm'],
             ], { :class => 'opt-form-select' }) %>
           </div>
 
@@ -58,15 +59,11 @@
 
         <div class="row">
           <div class="col-md-6">
-          <%= f.label :light_lvl, 'Your Light Level' %><br />
-          <%= f.text_field :light_lvl, placeholder: "eg. 335" %>
+            <%= f.label :light_lvl, 'Your Light Level' %><br />
+            <%= f.text_field :light_lvl, placeholder: "eg. 335" %>
           </div>
 
-          <div class="col-md-6 col-marg-fix">
-          <%= label_tag(:mic) %>
-          <br />
-          <%= check_box_tag(:mic, 'Mic?') %>
-          </div>
+
         </div>
 
         <br />

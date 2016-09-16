@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "Deleted your posting!"
       redirect_to posts_path
@@ -50,6 +52,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :console, :light_lvl, :activity, :destiny_class, :mic)
+    params.require(:post).permit(:name, :console, :light_lvl, :activity, :destiny_class, :mic, :notes)
   end
 end

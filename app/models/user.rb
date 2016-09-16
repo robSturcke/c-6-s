@@ -5,4 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+
+  belongs_to :role
+  before_create :set_default_role
+
+  private
+  def set_default_role
+    self.role ||= Role.find_by_name('registered')
+  end
 end
