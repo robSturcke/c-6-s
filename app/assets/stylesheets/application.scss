@@ -12,13 +12,24 @@
  *
  *= require_tree .
  *= require_self
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  */
   @import "bootstrap-sprockets";
   @import "bootstrap";
+
   html, body {
     font-family: 'PT Sans', sans-serif;
     letter-spacing: .17rem;
     background-color: rgb(40, 40, 40);
+  }
+
+  .bannerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 924px;
+    border-radius: 2px;
   }
 
   .container > .logo {
@@ -29,15 +40,22 @@
     color: rgb(255, 255, 255);
   }
 
+  .margin-wrapper {
+    margin-left: 2rem;
+  }
+
   .container-body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 95%;
     background-color: rgb(250,250,250);
-    padding: 3.5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 4.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-radius: 2px;
-    max-width: 850px;
+    max-width: 950px;
     border: 1px solid rgba(87, 120, 219, .3);
   }
 
@@ -49,9 +67,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
+    width: 100%;
     background-color: rgb(250,250,250);
-    padding: 3.5rem;
+    padding: .2rem;
     border-radius: 2px;
     max-width: 850px;
     border: 1px solid rgba(87, 120, 219, .3);

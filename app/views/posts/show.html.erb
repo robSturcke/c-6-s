@@ -2,11 +2,12 @@
   <div class="row">
     <br>
     <div class="col-md-8">
-      <table id="c6sTable" class='display' width="100%">
+      <h1>Your posting</h1>
+      <table id="c6sTable" class='display responsive no-wrap' width="100%">
         <thead>
           <tr>
-            <th>Gamertag</th>
             <th>Console</th>
+            <th>Gamertag</th>
             <th>Activity</th>
             <th>Class</th>
             <th>Light</th>
@@ -15,8 +16,8 @@
         </thead>
         <tbody>
           <tr>
-            <td><%= @post.name %></td>
             <td><%= @post.console %></td>
+            <td><%= @post.name %></td>
             <td><%= @post.activity %></td>
             <td><%= @post.destiny_class %></td>
             <td><%= @post.light_lvl %></td>

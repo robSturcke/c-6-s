@@ -36,3 +36,5 @@ source 'https://rubygems.org'
  gem 'aws-sdk', '~> 2.3.0'
 
  gem 'dotenv-rails', :groups => [:development, :test]
+
+ gem 'jquery-datatables-rails', '~> 3.4.0'

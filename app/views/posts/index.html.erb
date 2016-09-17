@@ -1,11 +1,76 @@
 <div class=container-body>
-  <%= render "form" %>
+  <div class="margin-wrapper">
+  <%= link_to "Post to LFG", new_post_path, class: 'btn btn-success' %>
     <h2>Filter your LFG search</h2>
+  </div>
     <br />
-    <h2>All Posts</h2>
       <div class="posts-wrap">
-        <% @posts.each do |post| %>
-          <p><%= link_to post.name, post %></p>
+        <table id="c6sTable" class='display responsive no-wrap' width="100%">
+          <%= form_for @post do |f| %>
+          <thead>
+            <tr>
+              <th>Console
+                <%= f.select :console, options_for_select([['Playstation 4', 'ps4'],
+                ['Xbox One', 'xb1']]) %>
+              </th>
+              <th>Gamertag</th>
+              <th>Activity
+                <%= f.select :activity, options_for_select([
+                ['1v1 Private Crucible Match', 'pm1v1'],
+                ['2v2 Private Crucible Match', 'pm2v2'],
+                ['3v3 Private Crucible Match', 'pm3v3'],
+                ['6v6 Private Crucible Match', 'pm6v6'],
+                ['Rumble', 'rumble'],
+                ['Doubles', '2v2play'],
+                ['Skirmish | Elimination | Salvage', '3v3play'],
+                ['Clash | Control | Rift', '6v6play'],
+                ['Supremecy', 'supremecy'],
+                ['Trials of Osiris: Flawless', 'tooflawless'],
+                ['Trials of Osiris: Fun', 'toofun'],
+                ['Trials of Osiris: Sherpa', 'toosherpa'],
+                ['Iron Banner', 'ironbanner'],
+                ['Strikes Playlist', 'strikesplay'],
+                ['Patrol', 'patrol'],
+                ['Quest', 'quest'],
+                ['Nightfall', 'nightfall'],
+                ['Vault of Glass Raid: Normal', 'vognorm'],
+                ['Vault of Glass Raid: Hard', 'voghard'],
+                ['Crota\'s End Raid: Normal', 'cenorm'],
+                ['Crota\'s End Raid: Hard', 'cehard'],
+                ['King\'s Fall Raid: Normal', 'kfnorm'],
+                ['King\'s Fall Raid: Hard', 'kfhard'],
+                ['Wrath of the Machine: Normal', 'wotmnorm'],
+                ['Wrath of the Machine: Hard', 'wotmhard'],
+                ], { :class => 'opt-form-select' }) %>
+              </th>
+              <th>Class
+                <%= f.select :destiny_class, options_for_select([
+                  ['Hunter', 'hunter'],
+                  ['Warlock', 'warlock'],
+                  ['Titan', 'titan']]) %>
+              </th>
+              <th>Light</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <% @posts.each do |post| %>
+              <td><%= @post.console %></td>
+              <td><%= @post.name %></td>
+              <td><%= @post.activity %></td>
+              <td><%= @post.destiny_class %></td>
+              <td><%= @post.light_lvl %></td>
+              <td><%= @post.notes %></td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
         <% end %>
       </div>
 </div>
+<script>
+  $('#c6sTable').DataTable({
+    responsive: true
+  });
+</script>
