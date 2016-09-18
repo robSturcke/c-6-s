@@ -13,9 +13,7 @@
             <%= f.select :console, options_for_select([['Playstation 4', 'ps4'],
             ['Xbox One', 'xb1']]) %>
           </div>
-        </div>
-
-        <br />
+  </div>
 
         <div class="row">
           <div class="col-md-6">
@@ -64,19 +62,19 @@
             <%= f.text_field :light_lvl, placeholder: "eg. 335" %>
           </div>
 
-
         </div>
 
-        <br />
 
-        <div class="form-group">
+        <div class="form-group notes-wrap">
           <%= f.label :notes %>
           <%= f.text_area :notes, rows: 4, class: 'form-control',
           placeholder: "Enter notes such as: Quest Name, Need 2 more players or any other specifics" %>
         </div>
 
-        <div class="form-group">
-          <%= f.submit "Post!", class: 'btn btn-success' %>
+        <br />
+
+        <div class="form-group post-btn-wrap">
+          <%= f.submit "Post to LFG!", class: 'btn btn-success' %>
         </div>
 
       </div>
