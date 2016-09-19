@@ -93,14 +93,6 @@
 
   }
 
-  .btn .btn-success {
-    float: right;
-  }
-
-  button, html input[type="button"], input[type="reset"], input[type="submit"] {
-    background-color: red;
-  }
-
   .row {
     padding: 2rem;
   }
@@ -131,8 +123,6 @@
   a:hover {
     color: rgb(87, 120, 219);
   }
-
-
 
   p.body {
     margin-top: 1rem;
@@ -179,6 +169,16 @@
 
   input.btn.btn-success,
   .login-btn {
+    color: rgb(255, 255, 255);
+    background-color: rgb(87, 120, 219);
+    font-size: 1.9rem;
+    margin: 1rem;
+    border: 1px solid rgb(87, 120, 219);
+    border-radius: 4px;
+    padding: .5rem;
+  }
+
+  button, html input[type="button"], input[type="reset"], input[type="submit"] {
     color: rgb(255, 255, 255);
     background-color: rgb(87, 120, 219);
     font-size: 1.9rem;
