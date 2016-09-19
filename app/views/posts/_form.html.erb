@@ -1,28 +1,31 @@
 <div class="form-container">
+  <h2>New LFG Post</h2>
   <div class="row">
-      <h2>New LFG Post</h2>
       <%= form_for @post do |f| %>
         <br />
           <div class="col-md-6">
           <%= f.label :name, 'Gamertag' %><br />
-          <%= f.text_field :name, autofocus: true, placeholder: "Your Gamertag" %>
+          <%= f.text_field :name, autofocus: true, placeholder: "Your Gamertag", :maxlength => 25 %>
           </div>
 
           <div class="col-md-6 col-marg-fix">
             <%= f.label :console, 'Select Console' %><br />
-            <%= f.select :console, options_for_select([['Playstation 4', 'ps4'],
-            ['Xbox One', 'xb1']]) %>
+            <%= f.select :console, options_for_select([['PS4', 'ps4'],
+            ['XboxOne', 'xb1']]) %>
           </div>
   </div>
 
         <div class="row">
+          <div class="col-md-6 col-marg-fix">
+            <%= f.label :light_lvl, 'Your Light Level' %><br />
+            <%= f.text_field :light_lvl, placeholder: "eg. 335", :maxlength => 3 %>
+          </div>
+
           <div class="col-md-6">
             <%= f.label :activity, 'Select Activity' %><br />
             <%= f.select :activity, options_for_select([
-            ['1v1 Private Crucible Match', 'pm1v1'],
-            ['2v2 Private Crucible Match', 'pm2v2'],
-            ['3v3 Private Crucible Match', 'pm3v3'],
-            ['6v6 Private Crucible Match', 'pm6v6'],
+            ['1v1 Private Crucible Match', 'pcm1v1'],
+            ['Private Crucible Match', 'pcm'],
             ['Rumble', 'rumble'],
             ['Doubles', '2v2play'],
             ['Skirmish | Elimination | Salvage', '3v3play'],
@@ -47,19 +50,15 @@
             ], { :class => 'opt-form-select' }) %>
           </div>
 
-          <div class="col-md-6 col-marg-fix">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
             <%= f.label :destiny_class, 'Class' %><br />
             <%= f.select :destiny_class, options_for_select([
               ['Hunter', 'hunter'],
               ['Warlock', 'warlock'],
               ['Titan', 'titan']]) %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <%= f.label :light_lvl, 'Your Light Level' %><br />
-            <%= f.text_field :light_lvl, placeholder: "eg. 335" %>
           </div>
 
         </div>
@@ -68,7 +67,7 @@
         <div class="form-group notes-wrap">
           <%= f.label :notes %>
           <%= f.text_area :notes, rows: 4, class: 'form-control',
-          placeholder: "Enter notes such as: Quest Name, Need 2 more players or any other specifics" %>
+          placeholder: "Enter: Quest Name, Need 2 more players or any other specifics", :maxlength => 50 %>
         </div>
 
         <br />

@@ -20,23 +20,7 @@
   html, body {
     font-family: 'PT Sans', sans-serif;
     letter-spacing: .17rem;
-    background-color: rgb(56, 76, 107);
-  }
-
-  .image-wrap {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
-  .bannerImage {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 857px;
-    border-radius: 2px;
+    background-color: rgb(41, 55, 76);
   }
 
   .container > .logo {
@@ -55,15 +39,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 97%;
+    width: 98%;
     background-color: rgb(250,250,250);
-    padding-top: 3.5rem;
-    padding-bottom: 4.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
     border-radius: 2px;
     max-width: 950px;
-    border: 1px solid rgba(87, 120, 219, .3);
+    border: 4px solid rgba(87, 120, 219, .3);
   }
 
   .row {
@@ -74,7 +58,7 @@
 
   .col-md-6 {
     display: block;
-    max-width: 250px;
+    max-width: 300px;
     margin-left: 3rem;
     margin-right: 3rem;
   }
@@ -102,12 +86,19 @@
   }
 
   .notes-wrap {
+    display: block;
     max-width: 400px;
-    margin-left: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+
   }
 
-  .post-btn-wrap {
-    margin-left: 8rem;
+  .btn .btn-success {
+    float: right;
+  }
+
+  button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    background-color: red;
   }
 
   .row {
@@ -116,7 +107,11 @@
 
   @media(max-width: 800px) {
     .container-body {
-      width: 98%;
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
     }
   }
 
@@ -202,8 +197,47 @@
     background-color: rgba(237,237,237, .4);
   }
 
+  .nav-container {
+    background-color: rgb(230,230,230);
+  }
+
+  .logo-img {
+    position: relative;
+    float: left;
+    margin-right: 3rem;
+    margin-left: 2rem;
+    width: 350px;
+  }
+
+  @media(max-width: 800px) {
+    .logo-img {
+      margin-left: .5rem;
+      margin-right: 1rem;
+      width: 200px;
+    }
+  }
+
+  @media(max-width: 500px) {
+    .logo-img {
+      width: 180px;
+    }
+  }
+
   .nav-tabs {
-    border-bottom: 2px solid #DDD;
+    border-bottom: 2px solid rgb(87, 120, 219);
+    text-align: center;
+    position: relative;
+    padding: .2rem;
+  }
+
+  .nav-tab-marg {
+    padding-top: 2.5rem;
+  }
+
+  @media(min-width: 800px) {
+    .nav-tab-marg {
+      padding-top: 4.5rem;
+    }
   }
 
   .nav-tabs >
@@ -227,14 +261,14 @@
   a, .nav-tabs >
   li > a:hover {
     border: none;
-    color: #4285F4 !important;
+    color: rgb(87, 120, 219) !important;
     background: transparent;
   }
 
   .nav-tabs >
   li > a::after {
     content: "";
-    background: #4285F4;
+    background: rgb(87, 120, 219);
     height: 2px;
     position: absolute;
     width: 100%;
@@ -249,4 +283,8 @@
   a::after, .nav-tabs >
   li:hover > a::after {
     transform: scale(1);
+  }
+
+  .user-info {
+    margin-right: 3rem;
   }
