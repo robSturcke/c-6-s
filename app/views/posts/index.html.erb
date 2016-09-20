@@ -1,76 +1,98 @@
 <div class=container-body>
   <div class="margin-wrapper">
-  <%= link_to "Post to LFG", new_post_path, class: 'btn btn-success' %>
+  <table>
+  <%= link_to "Post to LFG", new_post_path, class: 'btn btn-success' %> |
+  <%= link_to "Delete Post", @post, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this post?' } %>
+  </table>
     <h2>Filter your LFG search</h2>
   </div>
     <br />
       <div class="posts-wrap">
-        <table id="postDatatable" class='display responsive no-wrap' width="100%">
-          <%= form_for @post do |f| %>
+        <table id="postDatatable" class='display responsive no-wrap table' width="100%">
           <thead>
             <tr>
-              <th>Console
-                <%= f.select :console, options_for_select([['Playstation 4', 'ps4'],
-                ['Xbox One', 'xb1']]) %>
-              </th>
+              <th>Console</th>
               <th>Gamertag</th>
-              <th>Activity
-                <%= f.select :activity, options_for_select([
-                ['1v1 Private Crucible Match', 'pm1v1'],
-                ['2v2 Private Crucible Match', 'pm2v2'],
-                ['3v3 Private Crucible Match', 'pm3v3'],
-                ['6v6 Private Crucible Match', 'pm6v6'],
-                ['Rumble', 'rumble'],
-                ['Doubles', '2v2play'],
-                ['Skirmish | Elimination | Salvage', '3v3play'],
-                ['Clash | Control | Rift', '6v6play'],
-                ['Supremecy', 'supremecy'],
-                ['Trials of Osiris: Flawless', 'tooflawless'],
-                ['Trials of Osiris: Fun', 'toofun'],
-                ['Trials of Osiris: Sherpa', 'toosherpa'],
-                ['Iron Banner', 'ironbanner'],
-                ['Strikes Playlist', 'strikesplay'],
-                ['Patrol', 'patrol'],
-                ['Quest', 'quest'],
-                ['Nightfall', 'nightfall'],
-                ['Vault of Glass Raid: Normal', 'vognorm'],
-                ['Vault of Glass Raid: Hard', 'voghard'],
-                ['Crota\'s End Raid: Normal', 'cenorm'],
-                ['Crota\'s End Raid: Hard', 'cehard'],
-                ['King\'s Fall Raid: Normal', 'kfnorm'],
-                ['King\'s Fall Raid: Hard', 'kfhard'],
-                ['Wrath of the Machine: Normal', 'wotmnorm'],
-                ['Wrath of the Machine: Hard', 'wotmhard'],
-                ], { :class => 'opt-form-select' }) %>
-              </th>
-              <th>Class
-                <%= f.select :destiny_class, options_for_select([
-                  ['Hunter', 'hunter'],
-                  ['Warlock', 'warlock'],
-                  ['Titan', 'titan']]) %>
-              </th>
+              <th>Activity</th>
+              <th>Class</th>
               <th>Light</th>
               <th>Notes</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <% @posts.each do |post| %>
+            <% @posts.each do |post| %>
+              <tr>
                 <td><%= post.console %></td>
                 <td><%= post.name %></td>
                 <td><%= post.activity %></td>
                 <td><%= post.destiny_class %></td>
                 <td><%= post.light_lvl %></td>
                 <td><%= post.notes %></td>
-            </tr>
-          </tbody>
+              </tr>
             <% end %>
+          </tbody>
         </table>
-        <% end %>
       </div>
 </div>
 <script>
-  $('#postDatatable').DataTable({
-    responsive: true
-  });
+$(document).ready(function() {
+    $('#postDatatable').DataTable( {
+        initComplete: function () {
+            this.api().columns().every( function () {
+                var column = this;
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo( $(column.header()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    } );
+} );
+
+  // $('#postDatatable').DataTable({
+  //   responsive: true
+  // });
+
+  /* Initialise the DataTable */
+    // var oTable = $('#postDatatable').dataTable({
+    //   initComplete: function () {
+    //     this.api().columns().every( function () {
+    //     var column = this;
+    //     var select = $('<select><option value=""></option></select>')
+    //                     .appendTo( $(column.footer()).empty() )
+    //                     .on( 'change', function () {
+    //                       var val = $.fn.dataTable.util.escapeRegex(
+    //                                   $(this).val()
+    //                                 );
+    //
+    //                       column.search( val ? '^'+val+'$' : '', true, false ).draw();
+    //                                     } );
+    //     column.data().unique().sort().each( function ( d, j ) {
+    //         select.append( '<option value="'+d+'">'+d+'</option>' )
+    //     } );
+    //           } );
+    //       }
+    //   } );
+    // });
+
+
+    /* Add a select menu for each TH element in the table header */
+    // $("thead th").each(function (i) {
+    //     this.innerHTML = fnCreateSelect(oTable.fnGetColumnData(i)) + this.innerHTML;
+    //     $('select', this).change(function () {
+    //         oTable.fnFilter( $(this).val(), i );
+    //     });
+    // });
+
 </script>

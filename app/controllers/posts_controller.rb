@@ -13,7 +13,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    @post.assign_attributes(post_params)
+    if @post.save
+      flash[:notice] = "Updated!"
+      redirect_to @post
+    else
+      flash[:error] = "Not updated, try again!"
+      render :new
+    end
   end
 
   def create
@@ -28,19 +35,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.assign_attributes(post_params)
-    if @post.save
-      flash[:notice] = "Updated!"
-      redirect_to @post
-    else
-      flash[:error] = "Not updated, try again!"
-      render :new
-    end
+
   end
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.destroy
+    if current_user == @post.user
+      @post.destroy
       flash[:notice] = "Deleted your posting!"
       redirect_to posts_path
     else
