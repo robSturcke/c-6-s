@@ -2,17 +2,6 @@
     <br>
       <div class="posts-wrap">
       <h1>Your Post</h1>
-      <table id="postDatatable" class='display responsive no-wrap table' width="100%">
-        <thead>
-          <tr>
-            <th>Console</th>
-            <th>Gamertag</th>
-            <th>Activity</th>
-            <th>Class</th>
-            <th>Light</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td><%= @post.console %></td>
@@ -32,59 +21,3 @@
     </table>
     <br>
 </div>
-<script>
-$(document).ready(function() {
-    $('#postDatatable').DataTable( {
-      "bLengthChange": false,
-        initComplete: function () {
-            this.api().columns().every( function () {
-                var column = this;
-                var select = $('<select><option value=""></option></select>')
-                    .appendTo( $(column.header()).empty() )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
-
-                        column
-                            .search( val ? '^'+val+'$' : '', true, false )
-                            .draw();
-                    } );
-
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
-            } );
-        }
-    } );
-} );
-// var oTable = $('#postDatatable').dataTable({
-//   initComplete: function () {
-//     this.api().columns().every( function () {
-//     var column = this;
-//     var select = $('<select><option value=""></option></select>')
-//                     .appendTo( $(column.footer()).empty() )
-//                     .on( 'change', function () {
-//                       var val = $.fn.dataTable.util.escapeRegex(
-//                                   $(this).val()
-//                                 );
-//
-//                       column.search( val ? '^'+val+'$' : '', true, false ).draw();
-//                                     } );
-//     column.data().unique().sort().each( function ( d, j ) {
-//         select.append( '<option value="'+d+'">'+d+'</option>' )
-//     } );
-//           } );
-//       }
-//   } );
-// });
-//
-//
-// /* Add a select menu for each TH element in the table header */
-// $("thead th").each(function (i) {
-//     this.innerHTML = fnCreateSelect(oTable.fnGetColumnData(i)) + this.innerHTML;
-//     $('select', this).change(function () {
-//         oTable.fnFilter( $(this).val(), i );
-//     });
-// });
-</script>

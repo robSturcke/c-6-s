@@ -28,7 +28,11 @@
                 <td><%= post.destiny_class %></td>
                 <td><%= post.light_lvl %></td>
                 <td><%= post.notes %></td>
-                <td><%= link_to "edit", edit_post_path(post) %>
+                <td>
+                  <%= link_to edit_post_path(post) do %>
+                    <i class='ion-edit'></i>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>

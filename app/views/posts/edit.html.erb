@@ -1,4 +1,5 @@
 <div class="container-body">
     <h1>Edit your LFG post:</h1>
+    <%= link_to "Delete Post", post_path(@post), method: :delete, class: 'btn btn-success' %>
         <%= render "form" %>
 </div>
