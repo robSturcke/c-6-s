@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915221651) do
+ActiveRecord::Schema.define(version: 20160921222306) do
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20160915221651) do
     t.boolean  "mic"
     t.text     "notes"
     t.string   "name"
+    t.integer  "user_id"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

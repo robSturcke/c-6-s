@@ -1,7 +1,6 @@
 <div class="container-body">
-  <div class="row">
     <br>
-    <div class="col-md-8">
+      <div class="posts-wrap">
       <h1>Your Post</h1>
       <table id="postDatatable" class='display responsive no-wrap table' width="100%">
         <thead>
@@ -25,18 +24,18 @@
           </tr>
         </tbody>
       </table>
-
+    </div>
+    <br />
     <table class="col-md-4">
       <%= link_to 'Edit', posts_path(@post), class: 'btn btn-success' %> |
       <%= link_to "Delete Post", @post, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this post?' } %>
     </table>
     <br>
-    </div>
-  </div>
 </div>
 <script>
 $(document).ready(function() {
     $('#postDatatable').DataTable( {
+      "bLengthChange": false,
         initComplete: function () {
             this.api().columns().every( function () {
                 var column = this;
