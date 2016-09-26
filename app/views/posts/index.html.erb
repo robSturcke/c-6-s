@@ -1,13 +1,13 @@
 <div class=container-body>
   <div class="margin-wrapper">
   <table>
-  <%= link_to "Post to LFG", new_post_path, class: 'btn btn-success' %>
+  <%= link_to "Post | Edit LFG", new_post_path, class: 'btn btn-success' %>
   </table>
     <h2>Filter your LFG search</h2>
   </div>
     <br />
       <div class="posts-wrap">
-        <table id="postDatatable" class='display responsive no-wrap table' width="100%">
+        <table id="postDatatable" class='table display responsive no-wrap' width="100%">
           <thead>
             <tr>
               <th>Console</th>
@@ -16,7 +16,6 @@
               <th>Class</th>
               <th>Light</th>
               <th>Notes</th>
-              <th>Edit?</th>
             </tr>
           </thead>
           <tbody>
@@ -28,11 +27,6 @@
                 <td><%= post.destiny_class %></td>
                 <td><%= post.light_lvl %></td>
                 <td><%= post.notes %></td>
-                <td>
-                  <%= link_to edit_post_path(post) do %>
-                    <i class='ion-edit'></i>
-                  <% end %>
-                </td>
               </tr>
             <% end %>
           </tbody>
@@ -43,6 +37,7 @@
 $(document).ready(function() {
     $('#postDatatable').DataTable( {
       "bLengthChange": false,
+      "iDisplayLength": " All",
         initComplete: function () {
             this.api().columns().every( function () {
                 var column = this;
@@ -65,40 +60,4 @@ $(document).ready(function() {
         }
     } );
 } );
-
-  // $('#postDatatable').DataTable({
-  //   responsive: true
-  // });
-
-  /* Initialise the DataTable */
-    // var oTable = $('#postDatatable').dataTable({
-    //   initComplete: function () {
-    //     this.api().columns().every( function () {
-    //     var column = this;
-    //     var select = $('<select><option value=""></option></select>')
-    //                     .appendTo( $(column.footer()).empty() )
-    //                     .on( 'change', function () {
-    //                       var val = $.fn.dataTable.util.escapeRegex(
-    //                                   $(this).val()
-    //                                 );
-    //
-    //                       column.search( val ? '^'+val+'$' : '', true, false ).draw();
-    //                                     } );
-    //     column.data().unique().sort().each( function ( d, j ) {
-    //         select.append( '<option value="'+d+'">'+d+'</option>' )
-    //     } );
-    //           } );
-    //       }
-    //   } );
-    // });
-
-
-    /* Add a select menu for each TH element in the table header */
-    // $("thead th").each(function (i) {
-    //     this.innerHTML = fnCreateSelect(oTable.fnGetColumnData(i)) + this.innerHTML;
-    //     $('select', this).change(function () {
-    //         oTable.fnFilter( $(this).val(), i );
-    //     });
-    // });
-
 </script>

@@ -1,5 +1,4 @@
 <div class="form-container">
-  <h2>New LFG Post</h2>
   <div class="row">
       <%= form_for @post do |f| %>
         <br />
@@ -10,8 +9,8 @@
 
           <div class="col-md-6 col-marg-fix">
             <%= f.label :console, 'Select Console' %><br />
-            <%= f.select :console, options_for_select([['PS4', 'ps4'],
-            ['XboxOne', 'xb1']]) %>
+            <%= f.select :console, options_for_select([['PS4', 'PS4'],
+            ['XB1', 'XB1']]) %>
           </div>
   </div>
 
@@ -24,30 +23,32 @@
           <div class="col-md-6">
             <%= f.label :activity, 'Select Activity' %><br />
             <%= f.select :activity, options_for_select([
-            ['1v1 Private Crucible Match', 'pcm1v1'],
-            ['Private Crucible Match', 'pcm'],
-            ['Rumble', 'rumble'],
-            ['Doubles', '2v2play'],
-            ['Skirmish | Elimination | Salvage', '3v3play'],
-            ['Clash | Control | Rift', '6v6play'],
-            ['Supremecy', 'supremecy'],
-            ['Trials of Osiris: Flawless', 'tooflawless'],
-            ['Trials of Osiris: Fun', 'toofun'],
-            ['Trials of Osiris: Sherpa', 'toosherpa'],
-            ['Iron Banner', 'ironbanner'],
-            ['Strikes Playlist', 'strikesplay'],
-            ['Patrol', 'patrol'],
-            ['Quest', 'quest'],
-            ['Nightfall', 'nightfall'],
-            ['Vault of Glass Raid: Normal', 'vognorm'],
-            ['Vault of Glass Raid: Hard', 'voghard'],
-            ['Crota\'s End Raid: Normal', 'cenorm'],
-            ['Crota\'s End Raid: Hard', 'cehard'],
-            ['King\'s Fall Raid: Normal', 'kfnorm'],
-            ['King\'s Fall Raid: Hard', 'kfhard'],
-            ['Wrath of the Machine: Normal', 'wotmnorm'],
-            ['Wrath of the Machine: Hard', 'wotmhard'],
-            ], { :class => 'opt-form-select' }) %>
+            ['1v1 Private Crucible Match', '1v1 Private Match'],
+            ['Private Crucible Match', 'Private Match'],
+            ['Rumble', 'Rumble'],
+            ['Doubles', 'Doubles'],
+            ['Skirmish | Elimination | Salvage', '3v3 Crucible'],
+            ['Clash | Control | Rift', '6v6 Crucible'],
+            ['Supremecy', 'Supremecy'],
+            ['Trials of Osiris: Flawless', 'Trials of Osiris: Flawless'],
+            ['Trials of Osiris: Fun', 'Trials of Osiris: Fun'],
+            ['Trials of Osiris: Sherpa', 'Trials of Osiris: Sherpa'],
+            ['Iron Banner', 'Iron Banner'],
+            ['Patrol', 'Patrol'],
+            ['Archon\'s Forge', 'Archon\'s Forge'],
+            ['Quest', 'Quest'],
+            ['Exotic Quest', 'Exotic Quest'],
+            ['Strikes Playlist', 'Strikes Playlist'],
+            ['Nightfall', 'Nightfall'],
+            ['Vault of Glass Raid: Normal', 'Vault of Glass Raid: Normal'],
+            ['Vault of Glass Raid: Hard', 'Vault of Glass Raid: Hard'],
+            ['Crota\'s End Raid: Normal', 'Crota\'s End Raid: Normal'],
+            ['Crota\'s End Raid: Hard', 'Crota\'s End Raid: Hard'],
+            ['King\'s Fall Raid: Normal', 'King\'s Fall Raid: Normal'],
+            ['King\'s Fall Raid: Hard', 'King\'s Fall Raid: Hard'],
+            ['Wrath of the Machine: Normal', 'Wrath of the Machine: Normal'],
+            ['Wrath of the Machine: Hard', 'Wrath of the Machine: Hard']
+            ]) %>
           </div>
 
         </div>
@@ -56,9 +57,9 @@
           <div class="col-md-6">
             <%= f.label :destiny_class, 'Class' %><br />
             <%= f.select :destiny_class, options_for_select([
-              ['Hunter', 'hunter'],
-              ['Warlock', 'warlock'],
-              ['Titan', 'titan']]) %>
+              ['Hunter', 'Hunter'],
+              ['Warlock', 'Warlock'],
+              ['Titan', 'Titan']]) %>
           </div>
 
         </div>
