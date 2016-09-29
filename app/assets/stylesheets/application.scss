@@ -157,7 +157,18 @@
   }
 
   h4 {
+    text-align: center;
+    font-size: 2.7rem;
+  }
+
+  h5 {
+    text-align: center;
     font-size: 2.5rem;
+  }
+
+  h6 {
+    text-align: center;
+    font-size: 2rem;
   }
 
   a {
@@ -166,6 +177,10 @@
 
   a:hover {
     color: rgb(87, 120, 219);
+  }
+
+  .stripe-wrap {
+    padding-left: 43%;
   }
 
   p.body {

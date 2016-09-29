@@ -1,6 +1,9 @@
 <div class=container-body>
 <%= form_tag charges_path do %>
-  <h4>Click below to donate to Cayde-6 Sect and keep the site running!</h4>
-  <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
+  <h5>Click below to donate to Cayde-6 Sect and keep the site running!</h5>
+  <div class="stripe-wrap">
+    <script class='stripe-button' style='margin-left: 50%' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
+  </div>
 <% end %>
+  <h6>All donations are non-refundable</h6>
 </div>
