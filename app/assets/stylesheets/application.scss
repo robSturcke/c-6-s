@@ -21,6 +21,11 @@
     font-family: 'PT Sans', sans-serif;
     letter-spacing: .17rem;
     background-color: rgb(41, 55, 76);
+    background-image: url(../images/felwinterspeak.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
   }
 
   .container {
@@ -51,6 +56,17 @@
     padding-right: .5rem;
     border-radius: 2px;
     border: 4px solid rgba(97, 135, 229, .3);
+  }
+
+  .pull-right.donate-btn-col {
+    display: block;
+    margin-right: 7rem;
+    margin-bottom: 2rem;
+  }
+
+  a.btn.btn-success.btn-donate {
+    background-color: rgb(255, 109, 0);
+    border: 1px solid rgb(255, 109, 0);
   }
 
   @media(max-width: 800px) {
@@ -93,6 +109,7 @@
   a.btn.btn-lfg,
   a.btn.btn-success,
   a.btn.btn-danger {
+    margin-top: 1rem;
     margin-left: 2rem;
     margin-bottom: 2rem;
   }
@@ -128,7 +145,6 @@
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
-
   }
 
   .row {
@@ -145,7 +161,7 @@
   }
 
   a {
-    color: rgb(87, 120, 219);
+    color: rgb(97, 135, 229);
   }
 
   a:hover {
@@ -220,7 +236,7 @@
     width: 100%;
     bottom: 0;
     padding: 4rem;
-    margin-top: 40%;
+    margin-top: 50%;
     text-align: center;
     background-color: rgba(237,237,237, .4);
   }
@@ -316,4 +332,11 @@
 
   .user-info {
     margin-right: 3rem;
+  }
+
+  .techn-Logo {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }

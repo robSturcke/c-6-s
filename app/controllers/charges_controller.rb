@@ -15,7 +15,7 @@ class ChargesController < ApplicationController
      currency: 'usd'
    )
 
-   flash[:notice] = "Thanks for your support, #{current_user.email}! Feel free to support us again!"
+   flash[:notice] = "Thanks for your support, #{current_user.email}! Feel free to support C6S again!"
    redirect_to user_path(current_user) # or wherever
 
    # Stripe will send back CardErrors, with friendly messages
@@ -29,14 +29,14 @@ class ChargesController < ApplicationController
   def new
     @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
-      description: "Cayde-6 Sect Support - #{current_user.email}",
+      description: "Cayde-6 Sect Donation - #{current_user.email}",
       amount: Amount.default
     }
   end
 
   class Amount
     def self.default
-      1500
+      500
     end
   end
 end
