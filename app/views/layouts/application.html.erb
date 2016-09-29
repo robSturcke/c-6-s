@@ -26,6 +26,9 @@
          <% else %>
            <%= link_to "Sign In", new_user_session_path %>
          <% end %>
+         <% if current_user.try(:admin?) %>
+            <p>I'm admin</p>
+            <% end %>
     </div>
     <br />
     <br />
