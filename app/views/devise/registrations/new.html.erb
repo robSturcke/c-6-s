@@ -7,7 +7,7 @@
 
       <div class="field">
         <%= f.label :name, 'Gamertag' %><br />
-        <%= f.email_field :name, autofocus: true %>
+        <%= f.text_field :name, autofocus: true %>
       </div>
       <br />
       <div class="field">
@@ -26,6 +26,11 @@
       <div class="field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label :invite, "Invite Code" %><br />
+        <%= f.text_field :invite, placeholder: "Input invitation code" %>
       </div>
       <br />
       <div class="actions">
