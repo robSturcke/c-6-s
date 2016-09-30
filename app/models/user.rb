@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   before_create :set_default_role
 
   def validate_invite
-    if self.invite != "technodrome"
+    if self.invite != "technodromedestiny"
       self.errors[:base] << "The invite code you've entered is incorrect."
     end
   end
