@@ -13,9 +13,9 @@
     <div class="nav-container">
       <ul class="nav nav-tabs">
           <li><%= image_tag "c6slogo.svg", class: 'logo-img' %></li>
-          <li class="nav-tab-marg"><%= link_to "Posts", root_path %></li>
-          <li class="nav-tab-marg"><%= link_to "New", new_post_path %></li>
-          <li class="nav-tab-marg"><%= link_to "About", about_path %></li>
+          <li class="nav-tab-marg pull-right"><%= link_to "About", about_path %></li>
+          <li class="nav-tab-marg pull-right"><%= link_to "Posts", root_path %></li>
+          <li class="nav-tab-marg pull-right"><%= link_to "New", new_post_path %></li>
        </ul>
     </div>
     <br />
@@ -32,10 +32,7 @@
     </div>
     <br />
     <br />
-    <br />
-    <div class="pull-right donate-btn-col">
-      <%= link_to "Donate to C6S", new_charge_path, class: 'btn btn-success btn-donate' %>
-    </div>
+    <%= image_tag "image1.PNG", class: 'banner-image' %>
     <div class="container">
            <p class="notice"><%= notice %></p>
            <p class="alert"><%= alert %></p>
