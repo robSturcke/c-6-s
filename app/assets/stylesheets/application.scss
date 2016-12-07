@@ -14,8 +14,8 @@
  *= require_self
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  */
-  @import "bootstrap-sprockets";
-  @import "bootstrap";
+ @import "bootstrap";
+ @import "bootstrap-sprockets";
 
   html, body {
     font-family: 'PT Sans', sans-serif;
@@ -51,27 +51,11 @@
     width: 60%;
   }
 
-  .form-center {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    width: 55%;
+  .devise-container {
+    background-color: rgb(250,250,250);
     border: 7px solid rgba(97, 135, 229, .3);
     border-radius: 2px;
-    padding: 2.5rem;
-    background-color: rgb(210, 210, 210);
-  }
-
-  @media(max-width: 800px) {
-    .form-center {
-      width: 80%;
-    }
-  }
-
-  @media(max-width: 600px) {
-    .form-center {
-      width: 95%;
-    }
+    width: 80%;
   }
 
   .container-body {

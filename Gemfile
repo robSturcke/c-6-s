@@ -40,3 +40,5 @@ source 'https://rubygems.org'
  gem 'jquery-datatables-rails', '~> 3.4.0'
 
  gem 'stripe'
+
+ gem 'ionicons-rails'
