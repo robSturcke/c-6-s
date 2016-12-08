@@ -36,6 +36,10 @@
     margin: 1.5rem;
   }
 
+  .ion-ios-game-controller-b-outline{
+    font-size: 2rem;
+  }
+
   div.pull-right.user-info {
     color: rgb(255, 255, 255);
   }
@@ -280,7 +284,7 @@
     float: left;
     margin-right: 3rem;
     margin-left: 2rem;
-    width: 350px;
+    width: 275px;
   }
 
   @media(max-width: 800px) {
@@ -297,75 +301,13 @@
     }
   }
 
-  .nav-tabs {
-    border-bottom: 2px solid rgb(87, 120, 219);
-    text-align: center;
-    position: relative;
-    padding: .2rem;
-    font-size: 1.7rem;
-  }
-
-  .nav-tab-marg {
-    padding-top: 2.5rem;
-    margin-right: 2rem;
-  }
-
-  @media(min-width: 800px) {
-    .nav-tab-marg {
-      padding-top: 4.5rem;
-    }
-  }
-
-  @media(max-width: 800px) {
-    .nav-tab-marg {
-      font-size: 1.5rem;
-    }
-  }
-
-  .nav-tabs >
-  li.active >
-  a, .nav-tabs >
-  li.active >
-  a:focus, .nav-tabs >
-  li.active >
-  a:hover {
-    border-width: 0;
-  }
-
-  .nav-tabs >
-  li > a {
+  /* Navigation */
+  .navbar-default {
     border: none;
-    color: #666;
+    border-radius: 0px;
+    padding: .05rem;
   }
-
-  .nav-tabs >
-  li.active >
-  a, .nav-tabs >
-  li > a:hover {
-    border: none;
-    color: rgb(87, 120, 219) !important;
-    background: transparent;
-  }
-
-  .nav-tabs >
-  li > a::after {
-    content: "";
-    background: rgb(87, 120, 219);
-    height: 2px;
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    bottom: -1px;
-    transition: all 250ms ease 0s;
-    transform: scale(0);
-  }
-
-  .nav-tabs >
-  li.active >
-  a::after, .nav-tabs >
-  li:hover > a::after {
-    transform: scale(1);
-  }
+  /* Navigation end */
 
   .user-info {
     margin-right: 3rem;

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Cayde6Sect</title>
+  <meta name= "viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=PT+Sans' %>
@@ -10,26 +11,54 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="nav-container">
-      <ul class="nav nav-tabs">
-          <li><%= image_tag "c6slogo.svg", class: 'logo-img' %></li>
-          <li class="nav-tab-marg pull-right"><%= link_to "About", about_path %></li>
-          <li class="nav-tab-marg pull-right"><%= link_to "Posts", root_path %></li>
-          <li class="nav-tab-marg pull-right"><%= link_to "New", new_post_path %></li>
-       </ul>
-    </div>
-    <br />
-    <div class="pull-right user-info">
-         <% if current_user %>
-         <%= current_user.name %> <%= link_to "Sign out", destroy_user_session_path, method: :delete %><br />
-         <%= link_to "Edit Profile", edit_user_registration_path %>
-         <% else %>
-           <%= link_to "Sign In", new_user_session_path %>
-         <% end %>
+  <div>
+  <nav class="navbar navbar-default navbar-relative-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= image_tag "c6slogo.svg", class: 'logo-img' %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <li><%= link_to "New LFG Post", new_post_path %></li>
+            <li><%= link_to "Posts", root_path %></li>
+            <li><%= link_to "About", about_path %></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <%= yield :right_nav %>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon ion-ios-game-controller-b-outline"> </i><%= current_user.name %> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to '<i class="icon ion-ios-gear"></i> Account Settings'.html_safe, edit_user_registration_path %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to '<i class="icon ion-log-out"></i> Logout'.html_safe, destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+              <li><%= link_to "Login", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="pull-right">
          <% if current_user.try(:admin?) %>
             <p>I'm admin</p>
-            <% end %>
     </div>
+            <% end %>
     <br />
     <br />
     <div class="container">
