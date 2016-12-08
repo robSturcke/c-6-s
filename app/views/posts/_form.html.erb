@@ -8,7 +8,7 @@
           </div>
 
           <div class="col-md-6 col-marg-fix">
-            <%= f.label :console, 'Select Console' %><br />
+            <%= f.label :console, 'Select Platform'.html_safe %><br />
             <%= f.select :console, options_for_select([['PS4', 'PS4'],
             ['XB1', 'XB1']]) %>
           </div>
@@ -63,7 +63,6 @@
           </div>
 
         </div>
-
 
         <div class="form-group notes-wrap">
           <%= f.label :notes %>

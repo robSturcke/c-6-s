@@ -266,18 +266,7 @@
     padding: .5rem;
   }
 
-  footer {
-    width: 100%;
-    bottom: 0;
-    padding: 4rem;
-    margin-top: 50%;
-    text-align: center;
-    background-color: rgba(237,237,237, .4);
-  }
-
-  .nav-container {
-    background-color: rgb(230,230,230);
-  }
+  /* Logo */
 
   .logo-img {
     position: relative;
@@ -301,21 +290,36 @@
     }
   }
 
+  /* Logo end */
+
   /* Navigation */
   .navbar-default {
     border: none;
     border-radius: 0px;
     padding: .05rem;
   }
+
+  .nav-container {
+    background-color: rgb(230,230,230);
+  }
+
   /* Navigation end */
 
+  /* Admin info */
+  
   .user-info {
     margin-right: 3rem;
   }
 
-  .techn-Logo {
+  /* Admin info end */
+
+  /* Footer */
+
+  footer {
     width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    bottom: 0;
+    padding: 4rem;
+    margin-top: 50%;
+    text-align: center;
+    background-color: rgba(237,237,237, .4);
   }
