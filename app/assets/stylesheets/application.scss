@@ -17,6 +17,8 @@
  @import "bootstrap";
  @import "bootstrap-sprockets";
 
+ /* Main content application.html.erb */
+
   html, body {
     font-family: 'PT Sans', sans-serif;
     letter-spacing: .17rem;
@@ -32,27 +34,12 @@
     width: 100%;
   }
 
-  .container > .logo {
-    margin: 1.5rem;
-  }
-
   .ion-ios-game-controller-b-outline{
     font-size: 2rem;
   }
 
   div.pull-right.user-info {
     color: rgb(255, 255, 255);
-  }
-
-  .margin-wrapper {
-    margin-left: 2rem;
-  }
-
-  .banner-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
   }
 
   .devise-container {
@@ -74,17 +61,6 @@
     padding-right: .5rem;
     border-radius: 2px;
     border: 4px solid rgba(97, 135, 229, .3);
-  }
-
-  .pull-right.donate-btn-col {
-    display: block;
-    margin-right: 7rem;
-    margin-bottom: 2rem;
-  }
-
-  a.btn.btn-success.btn-donate {
-    background-color: rgb(255, 109, 0);
-    border: 1px solid rgb(255, 109, 0);
   }
 
   @media(max-width: 800px) {
@@ -116,9 +92,15 @@
     margin-right: 3rem;
   }
 
+  /* Main content application.html.erb end */
+
+  /* Table */
+
   .table {
     overflow: scroll;
   }
+
+  /* Table end */
 
   p.alert,
   p.notice {
@@ -138,6 +120,8 @@
     background-color: rgb(87, 120, 219);
     color: rgb(255, 255, 255);
   }
+
+  /* Posts wraps etc */
 
   .posts-wrap {
     display: block;
@@ -170,6 +154,14 @@
     padding: 2rem;
   }
 
+  .margin-wrapper {
+    margin-left: 2rem;
+  }
+
+  /* Posts wraps etc end */
+
+  /* Headings text and links */
+
   h1 {
     text-align: center;
     margin-bottom: 3rem;
@@ -198,10 +190,6 @@
     color: rgb(87, 120, 219);
   }
 
-  .stripe-wrap {
-    padding-left: 43%;
-  }
-
   p.body {
     margin-top: 1rem;
     margin-bottom: 4rem;
@@ -214,6 +202,9 @@
   label {
     font-size: 2rem;
   }
+
+  /* Headings text and links end */
+
 
   @media(max-width: 992px) {
     .col-marg-fix {
@@ -306,7 +297,7 @@
   /* Navigation end */
 
   /* Admin info */
-  
+
   .user-info {
     margin-right: 3rem;
   }
@@ -322,4 +313,13 @@
     margin-top: 50%;
     text-align: center;
     background-color: rgba(237,237,237, .4);
+  }
+
+  footer a {
+    color: rgb(0, 0, 0);
+  }
+
+  footer a:hover {
+    color: rgb(155, 155, 155);
+    text-decoration: none;
   }
