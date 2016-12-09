@@ -294,6 +294,17 @@
     background-color: rgb(230,230,230);
   }
 
+  .navbar-default .navbar-nav > li > a {
+    color: rgb(5, 5, 5);
+    font-size: 1.5rem;
+  }
+
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a:focus {
+    color: rgb(125, 125, 125);
+    background-color: transparent;
+  }
+
   /* Navigation end */
 
   /* Admin info */
