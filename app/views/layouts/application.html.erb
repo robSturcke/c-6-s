@@ -3,6 +3,7 @@
 <head>
   <title>Cayde6Sect</title>
   <meta name= "viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=PT+Sans' %>
@@ -47,8 +48,8 @@
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
-              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= link_to '<i class="icon ion-arrow-up-a"></i> Sign Up'.html_safe, new_user_registration_path %></li>
+              <li><%= link_to '<i class="icon ion-log-in"></i> Login'.html_safe, new_user_session_path %></li>
             <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -56,16 +57,12 @@
     </nav>
     <div class="pull-right user-info">
          <% if current_user.try(:admin?) %>
-            <p>Registered Admin</p>
+         <p>Registered Admin</p>
+         <% end %>
     </div>
-            <% end %>
     <br />
     <br />
-    <div class="container">
-           <p class="notice"><%= notice %></p>
-           <p class="alert"><%= alert %></p>
            <%= yield %>
-    </div>
 
 
   <footer><a href="http://rsvision.com">RSVision Development Project 2016</a></footer>

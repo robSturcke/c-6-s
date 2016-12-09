@@ -30,10 +30,6 @@
     background-size: cover;
   }
 
-  .container {
-    width: 100%;
-  }
-
   .ion-ios-game-controller-b-outline{
     font-size: 2rem;
   }
@@ -47,9 +43,17 @@
     border: 7px solid rgba(97, 135, 229, .3);
     border-radius: 2px;
     width: 80%;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
   }
 
-  .container-body {
+  .row {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .post-wrap {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -64,7 +68,7 @@
   }
 
   @media(max-width: 800px) {
-    .container-body {
+    .post-wrap {
       width: 100%;
       margin-left: 0;
       margin-right: 0;
@@ -72,24 +76,11 @@
   }
 
   @media(max-width: 600px) {
-    .container-body {
+    .post-wrap {
       width: 100%;
       margin-left: 0;
       margin-right: 0;
     }
-  }
-
-  .row {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .col-md-6 {
-    display: block;
-    max-width: 300px;
-    margin-left: 3rem;
-    margin-right: 3rem;
   }
 
   /* Main content application.html.erb end */
@@ -148,10 +139,6 @@
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .row {
-    padding: 2rem;
   }
 
   .margin-wrapper {
