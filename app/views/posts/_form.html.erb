@@ -1,13 +1,15 @@
-<div class="form-container">
+<div class="lfg-form-container">
   <div class="row">
       <%= form_for @post do |f| %>
         <br />
-          <div class="col-md-6">
+          <div class="col-xs-6">
           <%= f.label :name, 'Gamertag' %><br />
           <%= f.text_field :name, autofocus: true, placeholder: "Gamertag", :maxlength => 25 %>
           </div>
 
-          <div class="col-md-6 col-marg-fix">
+          <br />
+
+          <div class="col-xs-6">
             <%= f.label :console, 'Select Platform'.html_safe %><br />
             <%= f.select :console, options_for_select([['PS4', 'PS4'],
             ['XB1', 'XB1']]) %>
@@ -15,12 +17,14 @@
   </div>
 
         <div class="row">
-          <div class="col-md-6 col-marg-fix">
+          <div class="col-xs-6">
             <%= f.label :light_lvl, 'Your Light Level' %><br />
             <%= f.text_field :light_lvl, placeholder: "eg. 335", :maxlength => 3 %>
           </div>
 
-          <div class="col-md-6">
+          <br />
+
+          <div class="col-xs-6">
             <%= f.label :activity, 'Select Activity' %><br />
             <%= f.select :activity, options_for_select([
             ['1v1 Private Crucible Match', '1v1 Private Match'],
@@ -50,30 +54,32 @@
             ['Wrath of the Machine: Hard', 'Wrath of the Machine: Hard']
             ]) %>
           </div>
-
         </div>
 
+
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-xs-6">
             <%= f.label :destiny_class, 'Class' %><br />
             <%= f.select :destiny_class, options_for_select([
               ['Hunter', 'Hunter'],
               ['Warlock', 'Warlock'],
               ['Titan', 'Titan']]) %>
           </div>
-
         </div>
 
-        <div class="form-group notes-wrap">
-          <%= f.label :notes %>
-          <%= f.text_area :notes, rows: 4, class: 'form-control',
-          placeholder: "Enter: Quest Name, Need 2 more players or any other specifics", :maxlength => 35 %>
-        </div>
 
-        <br />
+        <div class="row">
+          <div class="form-group notes-wrap">
+            <%= f.label :notes %>
+            <%= f.text_area :notes, rows: 4, class: 'form-control',
+            placeholder: "Enter: Quest Name, Need 2 more players or any other specifics", :maxlength => 35 %>
+          </div>
 
-        <div class="form-group post-btn-wrap">
-          <%= f.submit "Post to LFG!", class: 'btn btn-success' %>
+          <br />
+
+          <div class="form-group post-btn-wrap">
+            <%= f.submit "Post to LFG!", class: 'btn btn-success' %>
+          </div>
         </div>
 
 </div>

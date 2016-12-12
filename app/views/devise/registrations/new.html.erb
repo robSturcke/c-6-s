@@ -1,4 +1,4 @@
-<div class="row devise-container">
+<div class="row">
   <div class="col-sm-4 col-sm-offset-4">
 
     <h1 class="text-center"><i class="icon ion-android-arrow-dropup-circle"></i> Sign Up</h1>
@@ -8,7 +8,7 @@
 
       <div class="form-group">
         <%= f.label :name, 'Gamertag' %><br />
-        <%= f.text_field :name, autofocus: true %>
+        <%= f.text_field :name, autofocus: false, class: 'form-control' %>
       </div>
 
       <div class="form-group">
@@ -30,18 +30,11 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :invite, "Invite Code" %><br />
-        <%= f.text_field :invite, placeholder: "Input invitation code" %>
-      </div>
-
-      <div class="form-group">
         <%= f.submit "Sign up", class: "btn btn-primary btn-block btn-lg" %>
       </div>
     <% end %>
     <div class="text-center">
-      <small>
       <%= render "devise/shared/links" %>
-      <small>
     </div>
   </div>
 </div>

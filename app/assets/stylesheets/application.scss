@@ -38,14 +38,14 @@
     color: rgb(255, 255, 255);
   }
 
-  .devise-container {
+  .col-sm-4 {
     background-color: rgb(250,250,250);
     border: 7px solid rgba(97, 135, 229, .3);
     border-radius: 2px;
-    width: 80%;
-    padding-top: 1.5rem;
-    padding-bottom: 2.5rem;
-    max-width: 600px;
+    padding-top: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .row {
@@ -142,10 +142,11 @@
     border: 1px solid rgba(87, 120, 219, .3);
   }
 
-  .form-container {
+  .lfg-form-container {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 98%;
     border: 1px solid rgba(87, 120, 219, .3);
     padding: 1rem;
     border-radius: 2px;
@@ -165,6 +166,10 @@
   /* Posts wraps etc end */
 
   /* Headings text and links */
+  h1, h2, h4,
+  h5, h6 {
+    cursor: default;
+  }
 
   h1 {
     text-align: center;
@@ -186,6 +191,10 @@
     font-size: 2rem;
   }
 
+  h2 {
+    text-align: center;
+  }
+
   a {
     color: rgb(97, 135, 229);
   }
@@ -197,10 +206,6 @@
   p.body {
     margin-top: 1rem;
     margin-bottom: 4rem;
-  }
-
-  h2 {
-    text-align: center;
   }
 
   label {
@@ -216,49 +221,8 @@
     }
   }
 
-  input#post_name,
-  input#post_light_lvl,
-  textarea#post_notes.form-control {
-    border: 1px solid rgba(87, 120, 219, .7);
-    border-radius: 4px;
-    font-size: 1.8rem;
-    padding: .5rem;
-    width: 100%;
-  }
-
   textarea {
    resize: none;
-  }
-
-  .login-field {
-    width: 65%;
-  }
-
-  @media(max-width: 800px) {
-    .login-field {
-      width: 95%;
-    }
-  }
-
-  input.btn.btn-success,
-  .login-btn {
-    color: rgb(255, 255, 255);
-    background-color: rgb(87, 120, 219);
-    font-size: 1.9rem;
-    margin: 1rem;
-    border: 1px solid rgb(87, 120, 219);
-    border-radius: 4px;
-    padding: .5rem;
-  }
-
-  button, html input[type="button"], input[type="reset"], input[type="submit"] {
-    color: rgb(255, 255, 255);
-    background-color: rgb(87, 120, 219);
-    font-size: 1.9rem;
-    margin: 1rem;
-    border: 1px solid rgb(87, 120, 219);
-    border-radius: 4px;
-    padding: .5rem;
   }
 
   /* Logo */
