@@ -30,6 +30,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :invite, "Invite Code" %><br />
+        <%= f.text_field :invite, placeholder: "Input invitation code" %>
+      </div>
+
+      <div class="form-group">
         <%= f.submit "Sign up", class: "btn btn-primary btn-block btn-lg" %>
       </div>
     <% end %>
